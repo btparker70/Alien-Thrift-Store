@@ -1,2 +1,2 @@
-# Kitten-Commerce
-Ecommerce website made by cats, for cats
+# Alien Thrift Store
+Ecommerce website for alien goods
