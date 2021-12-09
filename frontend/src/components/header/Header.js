@@ -1,26 +1,51 @@
-import React from 'react'
-import { Button, Navbar, Nav, Container, NavDropdown, Form, FormControl } from 'react-bootstrap'
+import React from "react";
+import {
+  Button,
+  Navbar,
+  Nav,
+  Container,
+  NavDropdown,
+  Form,
+  FormControl,
+} from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
 
 const Header = () => {
   return (
     <header>
       <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
         <Container fluid>
-          <Navbar.Brand href="/">Alien Thrift Store</Navbar.Brand>
+          <LinkContainer to="/">
+            <Navbar.Brand>Alien Thrift Store</Navbar.Brand>
+          </LinkContainer>
+
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
               className="me-auto my-2 my-lg-0"
-              style={{ maxHeight: '100px' }}
+              style={{ maxHeight: "100px" }}
               navbarScroll
             >
               <Nav className="mr-auto">
-                <Nav.Link href="/cart"><i className="fas fa-shopping-cart"></i>Cart</Nav.Link>
-                <Nav.Link href="/login"><i className="fas fa-user"></i>Login</Nav.Link>
+
+                <LinkContainer to="/cart">
+                  <Nav.Link>
+                    <i className="fas fa-shopping-cart"></i>Cart
+                  </Nav.Link>
+                </LinkContainer>
+
+                <LinkContainer to="/login">
+                  <Nav.Link>
+                    <i className="fas fa-user"></i>Login
+                  </Nav.Link>
+                </LinkContainer>
+                
               </Nav>
               <NavDropdown title="Link" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
+                <NavDropdown.Item href="#action4">
+                  Another action
+                </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action5">
                   Something else here
@@ -43,7 +68,7 @@ const Header = () => {
         </Container>
       </Navbar>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
