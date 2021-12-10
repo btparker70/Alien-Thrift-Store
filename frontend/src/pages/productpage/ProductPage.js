@@ -6,9 +6,11 @@ import Rating from '../../components/rating/Rating'
 import products from '../../products'
 
 const ProductPage = () => {
-  let params = useParams();
-  const product = products.find((product) => product._id === params.id)
 
+  let product = products.find((product) => product._id === params.id);
+  let params = useParams();
+  // const product = products.find((product) => product._id === params.id) as object;
+  
   return (
     <div>
       <Link to='/' className="btn btn-light my-3">Go Back</Link>
