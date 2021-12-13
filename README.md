@@ -6,3 +6,6 @@ env\scripts\activate
 
 from backend to start server
 python manage.py runserver
+
+front end
+npm start

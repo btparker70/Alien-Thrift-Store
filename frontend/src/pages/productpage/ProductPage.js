@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Row, Col, Image, ListGroup, Button, Card, ListGroupItem } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
@@ -7,8 +7,9 @@ import products from '../../products'
 
 const ProductPage = () => {
 
-  let product = products.find((product) => product._id === params.id);
-  let params = useParams();
+
+    let product = products.find((product) => product._id === params.id);
+    let params = useParams();
   // const product = products.find((product) => product._id === params.id) as object;
   
   return (
