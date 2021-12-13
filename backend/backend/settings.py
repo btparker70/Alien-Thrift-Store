@@ -40,12 +40,16 @@ INSTALLED_APPS = [
 
     # django rest framework package
     'rest_framework',
+    'corsheaders',
     
     # add base app to django
     'base.apps.BaseConfig',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -127,3 +131,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# this allow all url or port to make call
+CORS_ALLOW_ALL_ORIGINS = True
