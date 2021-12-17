@@ -9,3 +9,5 @@ python manage.py runserver
 
 front end
 npm start
+
+django admin user brian
