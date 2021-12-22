@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Row, Col } from "react-bootstrap";
 import Product from "../../components/product/Product";
+import Loader from "../../components/loader/Loader";
 import { listProducts } from "../../actions/productActions";
 
 const HomePage = () => {
@@ -18,7 +19,7 @@ const HomePage = () => {
     <div>
       <h1>Latest Products</h1>
       {loading ? (
-        <h2>Loading...</h2>
+        <Loader />
       ) : error ? (
         <h3>{error}</h3>
       ) : (
