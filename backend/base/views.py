@@ -45,6 +45,8 @@ def getRoutes(req):
   ]
   return Response(routes)
 
+# this gives us access to the default user data based on
+# the information passed through the access token
 @api_view(['GET'])
 def getUserProfile(req):
   user = req.user
