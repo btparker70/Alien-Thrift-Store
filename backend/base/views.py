@@ -5,7 +5,7 @@ from rest_framework.response import Response
 
 from .models import Product
 from .products import products
-from .serializers import ProductSerializer
+from .serializers import ProductSerializer, UserSerializer
 
 # Create your views here.
 # views are key components of the application within django
@@ -44,6 +44,12 @@ def getRoutes(req):
     '/api/products/<update>/<id>/',
   ]
   return Response(routes)
+
+@api_view(['GET'])
+def getUserProfile(req):
+  user = req.user
+  serializer = UserSerializer(user, many=False)
+  return Response(serializer.data)
 
 @api_view(['GET'])
 def getProducts(req):
