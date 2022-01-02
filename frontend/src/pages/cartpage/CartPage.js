@@ -16,8 +16,6 @@ const CartPage = () => {
 
   const cart = useSelector(state => state.cart)
   const { cartItems } = cart
-  
-  // const test = useSelector(state => state.countInStock)
 
   useEffect(() => {
     if (id) {
