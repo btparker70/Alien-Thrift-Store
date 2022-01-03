@@ -9,7 +9,8 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import HomePage from "./pages/homepage/HomePage";
 import ProductPage from "./pages/productpage/ProductPage";
-import CartPage from  './pages/cartpage/CartPage'
+import CartPage from  './pages/cartpage/CartPage';
+import LoginPage from  './pages/loginpage/LoginPage';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
             <Container>
               <Routes>  
                 <Route path="/" element={<HomePage />} exact />
+                <Route path="/login" element={<LoginPage />} />
                 <Route path="/product/:id" element={<ProductPage />} />
                 {/* <Route path="/cart/:id/?" element={<CartPage />} /> */}
                 <Route path="/cart" element={<CartPage />} >
