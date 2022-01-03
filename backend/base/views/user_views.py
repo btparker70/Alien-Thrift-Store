@@ -1,18 +1,10 @@
 from django.shortcuts import render
-from django.http import JsonResponse
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.response import Response
 
 from django.contrib.auth.models import User
-from .models import Product
-from .products import products
-from .serializers import ProductSerializer, UserSerializer, UserSerializerWithToken
-
-# Create your views here.
-# views are key components of the application within django
-# they take web requests and return web response
-# api_view is a decorator that makes the response pretty
+from base.serializers import ProductSerializer, UserSerializer, UserSerializerWithToken
 
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
@@ -69,19 +61,4 @@ def getUserProfile(req):
 def getUsers(req):
   users = User.objects.all()
   serializer = UserSerializer(users, many=True)
-  return Response(serializer.data)
-
-@api_view(['GET'])
-def getProducts(req):
-  # return all products from db
-  products = Product.objects.all()
-  serializer = ProductSerializer(products, many=True)
-  return Response(serializer.data)
-
-# pk = primary key
-# search all products by id return that id
-@api_view(['GET'])
-def getProduct(req, pk):
-  product = Product.objects.get(_id=pk)
-  serializer = ProductSerializer(product, many=False)
   return Response(serializer.data)
