@@ -5,15 +5,16 @@ import { useDispatch, useSelector } from 'react-redux'
 import Loader from '../../components/loader/Loader'
 import Message from '../../components/message/Message'
 import { login } from '../../actions/userActions'
+import FormContainer from '../../components/formcontainer/FormContainer'
 
 const LoginPage = () => {
   const [ email, setEmail ] = useState('')
   const [ password, setPassword ] = useState('')
 
   return (
-    <div>
+    <FormContainer>
       Login Page
-    </div>
+    </FormContainer>
   )
 }
 
