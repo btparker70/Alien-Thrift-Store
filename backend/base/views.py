@@ -34,24 +34,6 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
 
-@api_view(['GET'])
-def getRoutes(req):
-  routes = [
-    '/api/products/',
-    '/api/products/create/',
-
-    '/api/products/upload',
-
-    '/api/products/<id>/reciews/',
-
-    '/api/products/top/',
-    '/api/products/<id>/',
-
-    '/api/products/delete/<id>/',
-    '/api/products/<update>/<id>/',
-  ]
-  return Response(routes)
-
 # this gives us access to the default user data based on
 # the information passed through the access token
 @api_view(['GET'])
