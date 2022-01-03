@@ -18,8 +18,7 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 
 from django.contrib.auth.hashers import make_password
-
-from backend.base import serializers
+from rest_framework import status
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
   def validate(self, attrs):
@@ -41,16 +40,20 @@ class MyTokenObtainPairView(TokenObtainPairView):
 @api_view(['POST'])
 def registerUser(req):
   data = req.data
+  
+  try:
+    user = User.objects.create(
+      first_name = data['name'],
+      username = data['email'],
+      email = data['email'],
+      password = make_password(data['password']),
+    )
+    serializer = UserSerializerWithToken(user, many=False)
 
-  user = User.objects.create(
-    first_name = data['name']
-    username = data['email']
-    email = data['email']
-    password = make_password(data['password'])
-  )
-  serializer = UserSerializerWithToken(user, many=False)
-
-  return Response(serializer.data)
+    return Response(serializer.data)
+  except:
+    message = {'detail': 'User with this email already exists'}
+    return Response(message, status=status.HTTP_400_BAD_REQUEST)
 
 # this gives us access to the default user data based on
 # the information passed through the access token
