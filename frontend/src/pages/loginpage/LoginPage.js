@@ -62,7 +62,7 @@ const LoginPage = () => {
 
         <Button type='submit' variant='primary'>
           Sign In
-          </Button>
+        </Button>
       </Form>
 
       <Row className='py-3'>

@@ -11,6 +11,7 @@ import HomePage from "./pages/homepage/HomePage";
 import ProductPage from "./pages/productpage/ProductPage";
 import CartPage from  './pages/cartpage/CartPage';
 import LoginPage from  './pages/loginpage/LoginPage';
+import RegisterPage from  './pages/registerpage/RegisterPage';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
               <Routes>  
                 <Route path="/" element={<HomePage />} exact />
                 <Route path="/login" element={<LoginPage />} />
+                <Route path="/register" element={<RegisterPage />} />
                 <Route path="/product/:id" element={<ProductPage />} />
                 {/* <Route path="/cart/:id/?" element={<CartPage />} /> */}
                 <Route path="/cart" element={<CartPage />} >

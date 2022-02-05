@@ -12,7 +12,7 @@ front end
 npm start
 localhost:3000
 
-django admin user brian (ususal no upper no symbol)
+django admin user brian (ususal no upper no symbol) brian@email.com///pass
 
 https://www.google.com/search?q=scifi+parts&tbm=isch&ved=2ahUKEwj4x73civj0AhUvAzQIHeUcD0wQ2-cCegQIABAA&oq=scifi+parts&gs_lcp=CgNpbWcQAzIFCAAQgAQ6BwgjEO8DECc6CAgAEIAEELEDOggIABCxAxCDAToLCAAQgAQQsQMQgwE6BAgAEEM6BggAEAoQGFDHBFimKmCUK2gAcAB4AIABWIgB1AaSAQIxMpgBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=tXTDYbiZAq-G0PEP5bm84AQ&bih=730&biw=1536&rlz=1C1MSNA_enUS667US667&hl=en
 
