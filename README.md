@@ -19,3 +19,17 @@ https://www.google.com/search?q=scifi+parts&tbm=isch&ved=2ahUKEwj4x73civj0AhUvAz
 https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.pond5.com%2Fsci-fi-engine-part-3d-091023237_iconl.jpeg&imgrefurl=https%3A%2F%2Fwww.pond5.com%2F3d-models%2Fitem%2F91023237-sci-fi-engine-part&tbnid=nZsDBsT_sFjrOM&vet=12ahUKEwiju6eAi_j0AhVAHzQIHX41CuwQxiAoAHoECAAQEQ..i&docid=vwrESgKFjt_2GM&w=360&h=360&itg=1&q=scifi%20parts&hl=en&ved=2ahUKEwiju6eAi_j0AhVAHzQIHX41CuwQxiAoAHoECAAQEQ#imgrc=6-h1NBh9gVEG8M&imgdii=nnlP7EegUeHG1M
 
 do cartscreen 28 again
+
+Redux:
+constants are variables with the action names
+  export const USER_LOGOUT = 'USER_LOGOUT'
+The reducer imports those constants
+The reducer functions are waiting for part of the state object and an action
+The reducer returns the state, loading, or error payloads
+
+Then the store inports that reducer function and registers it to the store
+  registering a state means adding it to be used
+
+On action page, import constants
+  sometimes, actions are functions that take in a param and header, then
+  they make a request and dispatch data or errors
