@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import FormContainer from "../../components/formcontainer/FormContainer";
+import CheckoutSteps from "../../components/checkoutsteps/CheckoutSteps";
 import { saveShippingAddress } from "../../actions/cartActions"
 
 const ShippingPage = () => {
@@ -18,7 +19,6 @@ const ShippingPage = () => {
   const [country, setCountry] = useState(shippingAddress.country);
 
   const location = useLocation();
-  const redirect = location.search ? location.search.split("=")[1] : "/";
   const navigate = useNavigate();
 
   const submitHandler = (e) => {
@@ -29,6 +29,7 @@ const ShippingPage = () => {
 
   return (
     <FormContainer>
+      <CheckoutSteps step1 step2/>
       <h1>Shipping</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group controlId="address">
