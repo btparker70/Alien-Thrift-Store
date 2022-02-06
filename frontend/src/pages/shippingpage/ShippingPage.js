@@ -3,12 +3,19 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import FormContainer from "../../components/formcontainer/FormContainer";
+import { saveShippingAddress } from "../../actions/cartActions"
 
 const ShippingPage = () => {
-  const [address, setAddress] = useState("");
-  const [city, setCity] = useState("");
-  const [postalCode, setPostalCode] = useState("");
-  const [country, setCountry] = useState("");
+
+  const cart = useSelector(state => state.cart)
+  const { shippingAddress } = cart
+
+  const dispatch = useDispatch()
+
+  const [address, setAddress] = useState(shippingAddress.address);
+  const [city, setCity] = useState(shippingAddress.city);
+  const [postalCode, setPostalCode] = useState(shippingAddress.postalCode);
+  const [country, setCountry] = useState(shippingAddress.country);
 
   const location = useLocation();
   const redirect = location.search ? location.search.split("=")[1] : "/";
@@ -16,9 +23,10 @@ const ShippingPage = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log('Submitted')
+    dispatch(saveShippingAddress({ address, city, postalCode, country }))
+    navigate('/payment')
   }
-  
+
   return (
     <FormContainer>
       <h1>Shipping</h1>
@@ -57,7 +65,7 @@ const ShippingPage = () => {
         </Form.Group>
 
         <Form.Group controlId="country">
-          <Form.Label>City</Form.Label>
+          <Form.Label>Country</Form.Label>
           <Form.Control
             required
             type="text"

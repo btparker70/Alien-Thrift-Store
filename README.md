@@ -33,3 +33,6 @@ Then the store inports that reducer function and registers it to the store
 On action page, import constants
   sometimes, actions are functions that take in a param and header, then
   they make a request and dispatch data or errors
+
+Dispatch sends things to and from actions. Such as form data payloads
+An action can be like 'saveshippingaddress' which dispatches a action constant 'cart_save_shipping_address' and gets a payload. then in the actions we dispatch(setShippingAddress(the object data)) and it gets sent back.
