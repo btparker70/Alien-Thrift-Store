@@ -36,3 +36,5 @@ On action page, import constants
 
 Dispatch sends things to and from actions. Such as form data payloads
 An action can be like 'saveshippingaddress' which dispatches a action constant 'cart_save_shipping_address' and gets a payload. then in the actions we dispatch(setShippingAddress(the object data)) and it gets sent back.
+
+action function gets called. dispatches a code with a payload. the data goes to the constant in the reducer we trigger that reducer, take the new data and set the new value of the state
