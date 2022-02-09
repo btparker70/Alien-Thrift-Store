@@ -1,18 +1,16 @@
-import React, { useState, useEffect } from "react";
-import { useLocation, useNavigate, Link } from "react-router-dom";
+import React, {  useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import {
   Button,
   Row,
   Col,
   ListGroup,
   Image,
-  Card,
-  ListGroupItem,
+  Card
 } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../../components/message/Message";
 import CheckoutSteps from "../../components/checkoutsteps/CheckoutSteps";
-import { saveShippingAddress } from "../../actions/cartActions";
 import { createOrder } from '../../actions/orderActions'
 
 const PlaceOrderPage = () => {
@@ -28,6 +26,13 @@ const PlaceOrderPage = () => {
   cart.taxPrice = Number(cart.itemsPrice * 0.0825).toFixed(2)
 
   cart.totalPrice = (Number(cart.itemsPrice) + Number(cart.shippingPrice) + Number(cart.taxPrice)).toFixed(2)
+
+
+  useEffect(() => {
+    if(!cart.paymentMethod){
+      navigate('/payment')
+    }
+  }, [])
 
   useEffect(() => {
     if(success){
