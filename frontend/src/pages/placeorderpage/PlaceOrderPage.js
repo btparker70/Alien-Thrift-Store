@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Message from "../../components/message/Message";
 import CheckoutSteps from "../../components/checkoutsteps/CheckoutSteps";
 import { createOrder } from '../../actions/orderActions'
+import { ORDER_CREATE_RESET } from '../../constants/orderConstants'
 
 const PlaceOrderPage = () => {
   const orderCreate = useSelector(state => state.orderCreate)
@@ -37,6 +38,7 @@ const PlaceOrderPage = () => {
   useEffect(() => {
     if(success){
       navigate(`/order/${order._id}`)
+      dispatch({type:ORDER_CREATE_RESET})
     }
   }, [success, navigate])
 
