@@ -12,7 +12,7 @@ from rest_framework import status
 @permission_classes([IsAuthenticated])
 def addOrderItems(req):
   user = req.user
-  data = request.data
+  data = req.data
 
   orderItems = data['orderItems']
 
